@@ -69,9 +69,9 @@ if isKeepSize
     scale = diff(initBounds,[],1) ./ diff(finalBounds,[],1);
     % Center and apply scale
     center = mean(Vertices_sm);
-    Vertices_sm = bst_bsxfun(@minus, Vertices_sm, center);
-    Vertices_sm = bst_bsxfun(@times, Vertices_sm, scale);
-    Vertices_sm = bst_bsxfun(@plus,  Vertices_sm, center);
+    Vertices_sm = bsxfun(@minus, Vertices_sm, center);
+    Vertices_sm = bsxfun(@times, Vertices_sm, scale);
+    Vertices_sm = bsxfun(@plus,  Vertices_sm, center);
     
 %     % Compute normals
 %     VertNormals = tess_normals(Vertices_sm, Faces, VertConn);
